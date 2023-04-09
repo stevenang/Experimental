@@ -1,2 +1,18 @@
 first_name,last_name,user_id,birthday,address_01,address_02,city,state,zip_code,country,phone,email
-Steven,Ang,sang,1978-07-25,23030 58th Rd.,,Oakland Gardens,NY,11364,US,929-319-0725,ang.steve@icloud.com
+John,Doe,jd123,1985-08-10,123 Main St,Apt 4B,Los Angeles,CA,90001,USA,555-123-4567,john.doe@example.com
+Jane,Smith,js456,1990-04-22,456 Elm St,,Chicago,IL,60601,USA,555-234-5678,jane.smith@example.com
+Robert,Johnson,rj789,1983-11-15,789 Oak St,Suite A,Houston,TX,77001,USA,555-345-6789,robert.johnson@example.com
+Sarah,Williams,sw012,1988-02-27,12 Maple Ave,,San Francisco,CA,94101,USA,555-456-7890,sarah.williams@example.com
+Michael,Brown,mb345,1975-06-12,345 Pine St,APT 2B,Miami,FL,33101,USA,555-567-8901,michael.brown@example.com
+Emily,Davis,ed678,1995-09-08,678 Cedar St,,Seattle,WA,98101,USA,555-678-9012,emily.davis@example.com
+David,Jones,dj901,1978-12-01,901 Birch St,,New York,NY,10001,USA,555-789-0123,david.jones@example.com
+Amy,Wilson,aw234,1980-03-15,234 Spruce St,,Boston,MA,02101,USA,555-890-1234,amy.wilson@example.com
+Christopher,Taylor,ct567,1992-07-18,567 Cherry St,,Phoenix,AZ,85001,USA,555-901-2345,christopher.taylor@example.com
+Amanda,Martin,am890,1987-10-11,890 Laurel St,,Denver,CO,80201,USA,555-012-3456,amanda.martin@example.com
+Matthew,Anderson,ma234,1981-01-23,234 Rosewood Ave,,Portland,OR,97201,USA,555-123-4567,matthew.anderson@example.com
+Ashley,Clark,ac567,1998-04-05,567 Cedar St,,Las Vegas,NV,89101,USA,555-234-5678,ashley.clark@example.com
+Daniel,Lewis,dl890,1989-08-28,890 Oakwood Ave,,Atlanta,GA,30301,USA,555-345-6789,daniel.lewis@example.com
+Lauren,Jackson,lj123,1972-12-31,123 Maple St,,Dallas,TX,75201,USA,555-456-7890,lauren.jackson@example.com
+Brandon,Baker,bb456,1984-05-16,456 Elmwood Ave,,San Diego,CA,92101,USA,555-567-8901,brandon.baker@example.com
+Stephanie,Garcia,sg789,1991-10-29,789 Oakwood Ave,,Philadelphia,PA,19101,USA,555-678-9012,stephanie.garcia@example.com
+Tyler,Miller,tm012,1977-03-14,12 Cedarwood Ln,,Houston,TX,77001,USA,555-789-0123,tyler.miller@example
