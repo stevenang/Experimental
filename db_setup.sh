@@ -1,5 +1,13 @@
 #!/bin/bash
-
+mvn clean install
+if [ $? -eq 0 ]; then
+    count=0
+    while [ $count -lt 20 ]; do
+        sleep 1
+        let count=count+1
+    done
+fi
+echo "Project build"
 echo "Create docker for Experiment Database"
 docker container run --restart=always --name=experimentdb -p 3306:3306 -e MYSQL_ROOT_PASSWORD="a1DcN9q+" -e MYSQL_USER="dbuser" -e MYSQL_PASSWORD="a1DcN9q+" -e MYSQL_DATABASE="experimentdb" -d mysql:latest --sql-mode=NO_ENGINE_SUBSTITUTION
 if [ $? -eq 0 ]; then
