@@ -1,0 +1,198 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Experimental API",
+    "description": "API Development Study",
+    "version": "v1"
+  },
+  "paths": {
+    "/experimental/v1/ping": {
+      "summary": "Ping endpoint to determine whether or not the server is up",
+      "get": {
+        "description": "Endpoint to determine whether server is up",
+        "operationId": "getPing",
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiPing"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/experimental/v1/users": {
+      "summary": "Endpoint returning list of users",
+      "get": {
+        "description": "Endpoint returning list of users",
+        "operationId": "getUsers",
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiUsersPage"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/experimental/v1/user/{user_id}": {
+      "get": {
+        "description": "Endpoint to retrieve particular user's information",
+        "operationId": "getUser",
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiUser"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/experimental/v1/user": {
+      "post": {
+        "description": "Endpoint to add user to the system",
+        "operationId": "addUser",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApiUser"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200":{
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiUser"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ApiPing": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "build_version": {
+            "$ref": "#/components/schemas/ApiBuildVersion"
+          }
+        }
+      },
+      "ApiBuildVersion": {
+        "type": "object",
+        "properties": {
+          "build_time": {
+            "type": "string"
+          },
+          "build_version": {
+            "type": "string"
+          },
+          "commit_hash": {
+            "type": "string"
+          },
+          "branch": {
+            "type": "string"
+          }
+        }
+      },
+      "ApiUser": {
+        "type": "object",
+        "properties": {
+          "first_name": {
+            "type": "string"
+          },
+          "last_name": {
+            "type": "string"
+          },
+          "user_id":{
+            "type": "string"
+          },
+          "birthday": {
+            "type": "string"
+          },
+          "address_01": {
+            "type": "string"
+          },
+          "address_02": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "zip_code": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          }
+        }
+      },
+      "ApiUsersPage": {
+        "type": "object",
+        "properties": {
+          "previous_page_token": {
+            "type": "string",
+            "description": "If present, use this token in a subsequent request to fetch the previous page of data"
+          },
+          "next_page_token": {
+            "type": "string",
+            "description": "If present, use this token in a subsequent request to fetch the next page of data"
+          },
+          "users": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiUser"
+            }
+          }
+        }
+      }
+    }
+  }
+}
