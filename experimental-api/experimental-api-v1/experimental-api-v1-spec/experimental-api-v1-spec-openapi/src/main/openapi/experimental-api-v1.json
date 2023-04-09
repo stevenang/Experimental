@@ -44,14 +44,14 @@
         }
       }
     },
-    "/experimental/v1/user/{user_id}": {
+    "/experimental/v1/user": {
       "get": {
         "description": "Endpoint to retrieve particular user's information",
         "operationId": "getUser",
         "parameters": [
           {
             "name": "user_id",
-            "in": "path",
+            "in": "query",
             "required": true,
             "schema": {
               "type": "string"
@@ -70,9 +70,7 @@
             }
           }
         }
-      }
-    },
-    "/experimental/v1/user": {
+      },
       "post": {
         "description": "Endpoint to add user to the system",
         "operationId": "addUser",
