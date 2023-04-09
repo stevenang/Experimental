@@ -10,6 +10,7 @@ import tw.idv.stevenang.experimental.api.v1.model.ApiUsersPage;
 import tw.idv.stevenang.experimental.api.v1.resource.ping.ExperimentalApiDelegateGetPing;
 import tw.idv.stevenang.experimental.api.v1.resource.user.ExperimentalApiDelegateGetUser;
 import tw.idv.stevenang.experimental.api.v1.resource.user.ExperimentalApiDelegateGetUsers;
+import tw.idv.stevenang.experimental.api.v1.resource.user.ExperimentalApiDelegatePostUser;
 
 @Primary
 @Service
@@ -24,6 +25,9 @@ public class DefaultExperimentalApiDelegate implements ExperimentalApiDelegate {
     @Autowired
     private ExperimentalApiDelegateGetUser experimentalApiDelegateGetUser;
 
+    @Autowired
+    private ExperimentalApiDelegatePostUser experimentalApiDelegatePostUser;
+
     @Override
     public ResponseEntity<ApiPing> getPing() {
         return experimentalApiDelegateGetPing.getPing();
@@ -37,5 +41,10 @@ public class DefaultExperimentalApiDelegate implements ExperimentalApiDelegate {
     @Override
     public ResponseEntity<ApiUser> getUser(String userId) {
         return experimentalApiDelegateGetUser.getUser(userId);
+    }
+
+    @Override
+    public ResponseEntity<ApiUser> addUser(ApiUser apiUser) {
+        return experimentalApiDelegatePostUser.addUser(apiUser);
     }
 }
