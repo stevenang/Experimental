@@ -10,6 +10,7 @@
 
     <modules>
         <module>experimental-api</module>
+        <module>experimental-liquibase</module>
     </modules>
 
     <properties>
@@ -24,6 +25,7 @@
         <maven.compiler.source>20</maven.compiler.source>
         <maven.compiler.target>20</maven.compiler.target>
         <mockito.version>5.2.0</mockito.version>
+        <mysql.version>8.0.32</mysql.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <slf4j.version>2.0.4</slf4j.version>
         <snakeyaml.version>2.0</snakeyaml.version>
@@ -73,6 +75,11 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>

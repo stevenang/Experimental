@@ -1,0 +1,50 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    <changeSet author="sang" id="insert-user-data">
+        <loadData encoding="UTF-8"
+                  file="liquibase/data/20230409-user-table-data.csv"
+                  quotchar="'"
+                  schemaName="experimentdb"
+                  separator=","
+                  tableName="user">
+            <column header="first_name"
+                    name="first_name"
+                    type="STRING" />
+            <column header="last_name"
+                    name="last_name"
+                    type="STRING" />
+            <column header="user_id"
+                    name="user_id"
+                    type="STRING" />
+            <column header="birthday"
+                    name="birthday"
+                    type="DATE" />
+            <column header="address_01"
+                    name="address_01"
+                    type="STRING" />
+            <column header="address_02"
+                    name="address_02"
+                    type="STRING" />
+            <column header="city"
+                    name="city"
+                    type="STRING" />
+            <column header="state"
+                    name="state"
+                    type="STRING" />
+            <column header="zip_code"
+                    name="zip_code"
+                    type="STRING" />
+            <column header="country"
+                    name="country"
+                    type="STRING" />
+            <column header="phone"
+                    name="phone"
+                    type="STRING" />
+            <column header="email"
+                    name="email"
+                    type="STRING" />
+        </loadData>
+    </changeSet>
+</databaseChangeLog>
