@@ -1,29 +1,37 @@
 package tw.idv.stevenang.experimental.api.v1.resource.user;
 
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
+import tw.idv.stevenang.experimental.api.v1.entity.User;
 import tw.idv.stevenang.experimental.api.v1.model.ApiUser;
 import tw.idv.stevenang.experimental.api.v1.resource.ExperimentalApiDelegate;
+import tw.idv.stevenang.experimental.api.v1.service.UserService;
+import tw.idv.stevenang.experimental.api.v1.util.ConvertUtil;
 
 @Component
+@Slf4j
 public class ExperimentalApiDelegatePostUser implements ExperimentalApiDelegate {
+
+    @Autowired
+    private UserService userService;
 
     @Override
     public ResponseEntity<ApiUser> addUser(ApiUser apiUser) {
-        return ResponseEntity.ok(createApiUser());
+        try {
+            return ResponseEntity.ok(createApiUser(apiUser));
+        } catch (Exception e) {
+            log.error("{}", e);
+            return ResponseEntity.status(500).build();
+        }
     }
 
-    private ApiUser createApiUser() {
-        return new ApiUser()
-                .firstName("Steven")
-                .lastName("Ang")
-                .userId("sang")
-                .address01("23030 58th Rd")
-                .city("Oakland Gardens")
-                .state("New York")
-                .zipCode("11364")
-                .country("USA")
-                .email("ang.steve@icloud.com")
-                .phone("929-319-0725");
+    private ApiUser createApiUser(ApiUser apiUser) {
+
+        User user = ConvertUtil.convertToUser(apiUser);
+        userService.addUser(user);
+
+        return apiUser;
     }
 }

@@ -93,6 +93,16 @@
                 }
               }
             }
+          },
+          "500": {
+            "description": "bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
           }
         }
       }
@@ -188,6 +198,19 @@
             "items": {
               "$ref": "#/components/schemas/ApiUser"
             }
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": ""
+          },
+          "error_message": {
+            "type": "string",
+            "description": ""
           }
         }
       }
